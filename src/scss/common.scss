@@ -8,10 +8,62 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
-body div {
-  display: flex;
-  flex-direction: row;
-  gap: 100px;
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.div1, .div2, .div3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.div1 {
+  background-color: #00ff00;
+}
+
+.div2 {
+  background-color: #ff0000;
+}
+
+.div3 {
+  background-color: #ffff00;
+}
+
+.div-in {
+  opacity: 1;
+  animation: in 0.5s linear 1;
+}
+
+.div-out {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: out 0.5s linear 1;
+}
+
+.div-out-back {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: out-back 0.5s linear 1;
+}
+
+@keyframes in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes out {
+  0% {opacity: 1; transform: translateX(0)}
+  100% {opacity: 0; transform: translateX(100%)}
+}
+
+@keyframes out-back {
+  0% {opacity: 1; transform: translateX(0)}
+  100% {opacity: 0; transform: translateX(-100%)}
 }

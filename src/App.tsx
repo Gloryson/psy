@@ -1,33 +1,29 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
+
+
 
 
 export const App = () => {
 
-  const [state, setState] = useState(() => ({
-    value: 0,
-    isStart: false
-  }));
-  
-  useEffect(() => {
-    if (!state.isStart) return;
+  const [page, setPage] = useState(() => 1);
+  const [back, setBack] = useState(() => true);
 
-    let tid = window.setInterval(() => {
-      setState((state) => ({...state, value: state.value + 1}));
-    }, 1000);
-
-    return () => {
-      clearInterval(tid);
+  const mouseWheel = useCallback((event: any): void => {
+    if (event.deltaY > 0) {
+      setPage(page => page > 2 ? page = 1 : page + 1);
+      setBack(() => false);
     }
-  }, [state.isStart]);
-
-  
-
+    if (event.deltaY < 0) {
+      setPage(page => page < 2 ? page = 3 : page - 1);
+      setBack(() => true);
+    }  
+  }, [page]);
 
   return (
-    <div>
-      <button onClick={() => {setState((state) => ({...state, isStart: true}));}}>Start</button>
-      <div>{state.value}</div>
-      <button onClick={() => {setState((state) => ({...state, isStart: false}));}}>Stop</button>
+    <div className="container" onWheel={mouseWheel}>
+      <div className={`div1 ${page === 1 ? `div-in` : `div-out${back ? `-back` : ``}`}`}>1</div>
+      <div className={`div2 ${page === 2 ? `div-in` : `div-out${back ? `-back` : ``}`}`}>2</div>
+      <div className={`div3 ${page === 3 ? `div-in` : `div-out${back ? `-back` : ``}`}`}>3</div>
     </div>
   );
 }
