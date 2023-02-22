@@ -1,19 +1,19 @@
 .div-in {
-  animation: in 0.25s linear 1;
+  animation: in 0.5s linear 1;
 }
 
 .div-in-back {
-  animation: in-back 0.25s linear 1;
+  animation: in-back 0.5s linear 1;
 }
 
 .div-out {
   opacity: 0;
-  animation: out 0.25s linear 1;
+  animation: out 0.5s linear 1;
 }
 
 .div-out-back {
   opacity: 0;
-  animation: out-back 0.25s linear 1;
+  animation: out-back 0.5s linear 1;
 }
 
 @keyframes in {

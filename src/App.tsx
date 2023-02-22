@@ -1,46 +1,81 @@
-import { useState } from "react";
+import { useMemo, useEffect, useState } from "react";
+import { setAnimationStyleBetweenPages } from "./functions/setAnimationStyleBetweenPages";
+
+
 
 
 export const App = () => {
 
-  const [page, setPage] = useState(1);
-  const [back, setBack] = useState(false);
+  const [state, setState] = useState({
+    page: 1,
+    isBackDirection: false,
+    touchStart: 0,
+    amountPages: 5,
+    canScroll: true
+  })
 
+  useEffect(() => {
+    if (state.canScroll) {
 
+      const touchStartListener = (event: any) => {
+        setState(state => ({...state, touchStart: event.changedTouches[0].screenY}));
+      }
 
-  const mouseWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-    if (event.deltaY > 0) {
-      setPage(page => page > 4 ? 1 : page + 1);
-      setBack(() => false);
+      const touchEndListener = (event: any) => {
+        showRequiredPage(event.changedTouches[0].screenY, 'touch');
+      }
+
+      const whellListener = (event: any) => {
+        showRequiredPage(event.deltaY, 'scroll');
+      }
+  
+      window.addEventListener('touchstart', touchStartListener);
+      window.addEventListener('touchend', touchEndListener);
+      window.addEventListener('wheel', whellListener);
+  
+      return () => {
+        window.removeEventListener('touchstart', touchStartListener);
+        window.removeEventListener('touchend', touchEndListener);
+        window.removeEventListener('wheel', whellListener);
+      }
     }
-    if (event.deltaY < 0) {
-      setPage(page => page < 2 ? 5 : page - 1);
-      setBack(() => true);
+    
+  })
+
+  const showRequiredPage = (Y: number, action: string): void => {
+    if ((action === 'touch' && state.touchStart > Y) || (action === 'scroll' && Y > 0)) {
+      setState(state => ({
+        ...state,
+        page: state.page >= state.amountPages ? 1 : state.page + 1,
+        isBackDirection: false
+      }))
+    } else {
+      setState(state => ({
+        ...state,
+        page: state.page < 2 ? state.amountPages : state.page - 1,
+        isBackDirection: true
+      }))
     }
+    setState(state => ({...state, canScroll: false}));
+    setTimeout(() => {
+      setState(state => ({...state, canScroll: true}));
+    }, 510)
+    console.log('show')
   };
 
-
-
-  const setAnimationStyle = (el: number, page: number, back: boolean, amount: number): string => {
-
-    let prev = back ? el - 1 : el + 1;
-    prev = prev < 1 ? amount : prev > amount ? 1 : prev;
-
-    if (el === page) return back ? `div-in-back` : `div-in`;
-    if (page === prev) return back ? `div-out-back` : `div-out`;
-
-    return `off`;
-  }
-
-
+  
 
   return (
-    <div className="container" onWheel={mouseWheel}>
-      <div className={`div1  ${setAnimationStyle(1, page, back, 5)}`}>. 1 .</div>
-      <div className={`div2  ${setAnimationStyle(2, page, back, 5)}`}>. 2 .</div>
-      <div className={`div3  ${setAnimationStyle(3, page, back, 5)}`}>. 3 .</div>
-      <div className={`div4  ${setAnimationStyle(4, page, back, 5)}`}>. 4 .</div>
-      <div className={`div5  ${setAnimationStyle(5, page, back, 5)}`}>. 5 .</div>
+    <div className="container">
+      {useMemo(() => {
+        return <>
+          <div className={`div1  ${setAnimationStyleBetweenPages(1, state)}`}>. 1 .</div>
+          <div className={`div2  ${setAnimationStyleBetweenPages(2, state)}`}>. 2 .</div>
+          <div className={`div3  ${setAnimationStyleBetweenPages(3, state)}`}>. 3 .</div>
+          <div className={`div4  ${setAnimationStyleBetweenPages(4, state)}`}>. 4 .</div>
+          <div className={`div5  ${setAnimationStyleBetweenPages(5, state)}`}>. 5 .</div>
+        </>
+      }, [state.page])}
     </div>
   );
 }
