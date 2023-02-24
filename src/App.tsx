@@ -1,34 +1,41 @@
-import { useState } from "react";
-import { AppAnimationContainer } from "./components/AppAnimationContainer";
+import { useEffect, useState } from "react"
+import { PagesContainer } from "./components";
+import { getScrollWay, getY } from "./helpers";
 
 
-export interface State {
-  currPage: 1;
-  isBackScroll: boolean;
-  touchStart: number;
-  amountPages: number;
-  canScroll: boolean;
-  jsHeight: string;
-}
 
 
 export const App = () => {
 
-  const [state, setState] = useState<State>({
-    currPage: 1,
-    isBackScroll: false,
-    touchStart: 0,
-    amountPages: 5,
-    canScroll: true,
-    jsHeight: `${window.innerHeight}px`
-  })
+  const [state, setState] = useState({ touchStart: 0, direction: '', canScroll: true });
 
+  useEffect(() => {
+    if (state.direction && state.canScroll) {
+      console.log(state.direction);
+      setState(state => ({ ...state, canScroll: false }));
+      setTimeout(() => {
+        setState(() => ({ touchStart: 0, direction: '', canScroll: true }))
+      }, 500);
+    }    
+  }, [state.direction]);
 
-  
-  return (
-    <AppAnimationContainer
-      state={state}
-      setState={setState}
-    />
-  );
+  return(
+    <div 
+      className="scroll__container"
+      onTouchStart={(e) => {
+        setState(state => ({
+          ...state, touchStart: getY(e)}));
+      }}
+      onTouchEnd={(e) => {
+        setState(state => ({
+          ...state, direction: getScrollWay(state.touchStart, getY(e))}))
+      }}
+      onWheel={(e) => {
+        setState(state => ({
+          ...state, direction: getScrollWay(e.deltaY, 0.1)}))
+      }}
+    >
+      <PagesContainer/>
+    </div>
+  )
 }

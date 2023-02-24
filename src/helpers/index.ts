@@ -1,6 +1,6 @@
-import { setPageAnimationStyle } from "./setPageAnimationStyle";
-import { showRequiredPage } from "./showRequiredPage";
+import { getScrollWay } from "./getScrollWay";
+import { getY } from "./getY";
 
 
 
-export { setPageAnimationStyle, showRequiredPage };
+export { getScrollWay, getY };

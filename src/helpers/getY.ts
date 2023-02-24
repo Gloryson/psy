@@ -1,0 +1,1 @@
+export const getY = (event: any): number => event.changedTouches[0].screenY;

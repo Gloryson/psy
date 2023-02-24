@@ -8,38 +8,8 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
   overflow: hidden;
-}
-
-.div1, .div2, .div3, .div4, .div5 {
-  width: 100%;
-  height: var(--js-height);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-  color: #ffffff;
-}
-
-.div1 {
-  background-color: #00ff00;
-}
-
-.div2 {
-  background-color: #00fbff;
-}
-
-.div3 {
-  background-color: #ffff00;
-}
-
-.div4 {
-  background-color: #ff7777;
-}
-
-.div5 {
-  background-color: #ee57ff;
 }
