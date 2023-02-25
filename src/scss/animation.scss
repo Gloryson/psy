@@ -1,0 +1,28 @@
+.current__page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: current 0.35s linear 1;
+}
+
+.previous__page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  animation: previous 0.25s linear 1;
+}
+
+@keyframes current {
+  0% {opacity: 0; transform: perspective(10px) translateZ(-35px);}
+  100% {opacity: 1; transform: perspective(10px) translateZ(0px);}
+}
+
+@keyframes previous {
+  0% {visibility: visible; opacity: 1; transform: perspective(10px) translateZ(0px);}
+  100% {opacity: 0; transform: perspective(10px) translateZ(10px);}
+}
+
+.display__off {
+  display: none;
+}

@@ -9,15 +9,18 @@ export const App = () => {
 
   const [state, setState] = useState({ touchStart: 0, direction: '', canScroll: true });
 
+
+  
   useEffect(() => {
     if (state.direction && state.canScroll) {
-      console.log(state.direction);
       setState(state => ({ ...state, canScroll: false }));
       setTimeout(() => {
         setState(() => ({ touchStart: 0, direction: '', canScroll: true }))
-      }, 500);
+      }, 200);
     }    
   }, [state.direction]);
+
+
 
   return(
     <div 
@@ -35,7 +38,9 @@ export const App = () => {
           ...state, direction: getScrollWay(e.deltaY, 0.1)}))
       }}
     >
-      <PagesContainer/>
+      <PagesContainer
+        direction={state.direction}
+      />
     </div>
   )
 }
