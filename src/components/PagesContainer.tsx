@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { getCurrPage, setPageAnimationStyle } from "../helpers";
+import { getClientHeight, getCurrPage, setPageAnimationStyle } from "../helpers";
 import { AboutPage } from "./AboutPage"
 import { ContactPage } from "./ContactPage"
 import { MainPage } from "./MainPage"
@@ -17,6 +17,7 @@ export const PagesContainer: React.FC<{ direction: string }> = ({ direction }) =
       setPrevPage(() => currPage);
       setCurrPage(() => getCurrPage(currPage, direction, 3));
     }
+    getClientHeight();
   }, [direction]);
 
   

@@ -1,14 +1,9 @@
 .current__page {
-  position: absolute;
-  top: 0;
-  left: 0;
   animation: current 0.35s linear 1;
 }
 
 .previous__page {
   position: absolute;
-  top: 0;
-  left: 0;
   visibility: hidden;
   animation: previous 0.25s linear 1;
 }

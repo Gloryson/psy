@@ -1,8 +1,9 @@
-.scroll__container {
+.app__scroll__container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: var(--inner-height);
-  background-color: #000000;
+  height: var(--client-height);
+  background: url(../assets/img/background.jpg) center no-repeat;
+  background-size: cover;
 }

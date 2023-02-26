@@ -16,15 +16,15 @@ export const App = () => {
       setState(state => ({ ...state, canScroll: false }));
       setTimeout(() => {
         setState(() => ({ touchStart: 0, direction: '', canScroll: true }))
-      }, 200);
-    }    
+      }, 350);
+    }
   }, [state.direction]);
 
 
 
   return(
     <div 
-      className="scroll__container"
+      className="app__scroll__container"
       onTouchStart={(e) => {
         setState(state => ({
           ...state, touchStart: getY(e)}));
