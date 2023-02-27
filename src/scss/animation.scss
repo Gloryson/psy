@@ -4,7 +4,7 @@
 
 .previous__page {
   position: absolute;
-  visibility: hidden;
+  opacity: 0;
   animation: previous 0.25s linear 1;
 }
 
@@ -14,7 +14,7 @@
 }
 
 @keyframes previous {
-  0% {visibility: visible; opacity: 1; transform: perspective(10px) translateZ(0px);}
+  0% {opacity: 1; transform: perspective(10px) translateZ(0px);}
   100% {opacity: 0; transform: perspective(10px) translateZ(10px);}
 }
 
