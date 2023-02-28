@@ -1,0 +1,50 @@
+.navigation__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  padding: 60px 10px;
+  position: fixed;
+  left: 0;
+
+  @media (max-width: 999.9px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+    height: 60px;
+    padding: 5px;
+    bottom: 0;
+    right: 0;
+    box-shadow: #cccccc 0 0 5px 1px;
+  }
+}
+
+.about, .content, .documents, .contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  filter: invert(17%) sepia(97%) saturate(0%) hue-rotate(248deg) brightness(102%) contrast(81%);
+  cursor: pointer;
+}
+
+.about {
+  background-image: url(../assets/img/svg/graduation-cap.svg);
+}
+
+.content {
+  background-image: url(../assets/img/svg/world.svg);
+}
+
+.documents {
+  background-image: url(../assets/img/svg/document.svg);
+}
+
+.contacts {
+  background-image: url(../assets/img/svg/clip.svg);
+}
