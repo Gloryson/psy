@@ -1,0 +1,23 @@
+.documents__page {
+  text-align: left;
+  line-height: 25px;
+  padding: 60px 60px 60px 80px;
+
+  @media (max-width: 999.9px) {
+    padding: 60px 5px 120px 5px;
+  }
+
+  b {
+    font-size: 18px;
+  }
+
+  p {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 23px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+}
