@@ -10,7 +10,6 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: #ffffff;
 
   @media (max-width: 999.9px) {
     flex-direction: row;
@@ -21,7 +20,8 @@
     top: auto;
     bottom: 0;
     right: 0;
-    box-shadow: #cccccc 0 0 5px 1px;
+    box-shadow: #cccccc 0 0 2px 1px;
+    background-color: #ffffff;
   }
 }
 
@@ -33,7 +33,7 @@
   height: 30px;
   background-size: 100%;
   background-repeat: no-repeat;
-  filter: invert(31%) sepia(0%) saturate(186%) hue-rotate(136deg) brightness(99%) contrast(86%);
+  filter: invert(38%) sepia(39%) saturate(822%) hue-rotate(139deg) brightness(94%) contrast(81%);
   cursor: pointer;
 }
 

@@ -1,7 +1,7 @@
-import { About } from "./About/About";
-import { Contacts } from "./Contacts/Contacts";
-import { Content } from "./Content/Content";
-import { Documents } from "./Documents/Documents";
+import { AboutPage } from "./AboutPage/AboutPage";
+import { ContactsPage } from "./ContactsPage/ContactsPage";
+import { ContentPage } from "./ContentPage/ContentPage";
+import { DocumentsPage } from "./DocumentsPage/DocumentsPage";
 
 
-export { About, Contacts, Content, Documents };
+export { AboutPage, ContactsPage, ContentPage, DocumentsPage };

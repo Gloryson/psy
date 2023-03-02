@@ -1,8 +1,8 @@
-import './Documents.scss';
+import './DocumentsPage.scss';
 
 
 
-export const Documents = () => {
+export const DocumentsPage = () => {
   return(
     <div className='documents__page'>
       <h2>ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ</h2>

@@ -1,0 +1,74 @@
+.card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: #cccccc 0 0 5px 1px;
+  border-radius: 5px;
+  width: calc((100vw - 140px - 60px) / 4);
+  height: calc((100vw - 140px - 60px) / 4);
+
+  @media (max-width: 1199.9px) {
+    width: calc((100vw - 140px - 45px) / 3);
+    height: calc((100vw - 140px - 45px) / 3);
+  }
+
+  @media (max-width: 999.9px) {
+    width: calc((100vw - 80px - 45px) / 3);
+    height: calc((100vw - 80px - 45px) / 3);
+  }
+
+  @media (max-width: 899.9px) {
+    width: calc((100vw - 80px - 30px) / 2);
+    height: calc((100vw - 80px - 30px) / 2);
+  }
+
+  @media (max-width: 699.9px) {
+    width: calc(100vw - 20px);
+    height: 85vw;
+  }
+}
+
+.card__img {
+  width: 100%;
+  height: calc(100% / 1.7777777);
+  background: url(../../assets/img/svg/graduation-cap.svg) no-repeat center;
+  background-color: #5EA8A7;
+  background-size: 100%;
+
+  @media (max-width: 699.9px) {
+    height: calc((100vw - 20px) / 1.7777777);
+    box-shadow: none;
+  }
+}
+
+.card__text {
+  height: 25%;
+  padding: 10px;
+  overflow-y: hidden;
+
+  @media (max-width: 699.9px) {
+    height: 20%;
+  }
+}
+
+.card__button {
+  color: #5EA8A7;
+  background-color: #ffffff;
+  padding: 5px 9px;
+  border: 2px solid #5EA8A7;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: #e2e2e2 0 0 7px 1px;
+
+  &:hover {
+    color: #4f8e8c;
+    border: 2px solid #4f8e8c;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: #ffffff;
+  }
+}

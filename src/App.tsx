@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom"
-import { NavigationMenu } from "./components"
-import { Header } from "./components/Header/Header";
-import { About, Contacts, Content, Documents } from "./Pages"
+import { NavigationMenu, Header } from "./components"
+import { AboutPage, ContactsPage, ContentPage, DocumentsPage } from "./Pages"
 
 
 
@@ -20,10 +19,10 @@ export const App = () => {
       <Header />
       <NavigationMenu />
       <Routes>
-        <Route path='about' element={<About />} />
-        <Route path='content' element={<Content />}/>
-        <Route path='documents' element={<Documents />}/>
-        <Route path='contacts' element={<Contacts />}/>
+        <Route path='about' element={<AboutPage />} />
+        <Route path='content' element={<ContentPage />}/>
+        <Route path='documents' element={<DocumentsPage />}/>
+        <Route path='contacts' element={<ContactsPage />}/>
       </Routes>
     </>
   )
