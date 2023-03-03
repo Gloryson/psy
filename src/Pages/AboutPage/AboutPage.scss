@@ -1,0 +1,13 @@
+.about__container {
+  width: 100%;
+  height: 100vh;
+  background: url(../../assets/img/anatol.png) no-repeat top right;
+  background-size: 70%;
+  padding: 60px 0 0 100px;
+
+  @media (max-width: 999.9px) {
+    background-position: center;
+    background-size: 128%;
+    height: 100vw;
+  }
+}
