@@ -7,15 +7,9 @@ export const Header = () => {
   return(
     <header className='header'>
       <Link to={'about'}>
-        <h1>Психолог Анатолий Болкунов</h1>
+        <div className='header__logo'></div>
       </Link>
-      <div className='input__container'>
-        <input type="search" className='search__input'/>
-        <button className='search__button'></button>
-      </div>
-      <div className='login__button__container'>
-        <button className='login__button'>Войти</button>
-      </div>
+      <button className='login__button'>Войти</button>
     </header>
   )
 }

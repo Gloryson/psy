@@ -4,7 +4,7 @@ import './DocumentsPage.scss';
 
 export const DocumentsPage = () => {
   return(
-    <div className='documents__page'>
+    <div className='documents__container'>
       <h2>ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ</h2>
       <p><b>Договор публичной оферты на оказание информационно-консультационных услуг
         предлагается на условиях публичной оферты в соответствии со статьей 407 частью 2 Гражданского кодекса Республики Беларусь.</b></p>

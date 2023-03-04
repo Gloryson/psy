@@ -1,13 +1,67 @@
 .about__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   width: 100%;
-  height: 100vh;
-  background: url(../../assets/img/anatol.png) no-repeat top right;
+  background: url(../../assets/img/anatol.png) no-repeat top center;
   background-size: 70%;
-  padding: 60px 0 0 100px;
+  padding: calc(100vw / 1.28 * 0.6) 15px 120px;
+
+  @media (max-width: 1399.9px) {
+    background-size: 80%;
+    padding-top: calc(100vw / 1.28 * 0.7);
+  }
+
+  @media (max-width: 1299.9px) {
+    background-size: 85%;
+    padding-top: calc(100vw / 1.28 * 0.75);
+  }
+
+  @media (max-width: 1199.9px) {
+    background-size: 95%;
+    padding-top: calc(100vw / 1.28 * 0.85);
+  }
 
   @media (max-width: 999.9px) {
-    background-position: center;
+    background-size: 110%;
+    padding-top: calc(100vw / 1.28);
+  }
+
+  @media (max-width: 799.9px) {
     background-size: 128%;
-    height: 100vw;
+    padding-top: calc(100vw / 1.08);
+  }
+
+  h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 72px;
+    font-weight: 100;
+    padding-bottom: 40px;
+    text-align: center;
+
+    @media (max-width: 1055px) {
+      font-size: 60px;
+    }
+
+    @media (max-width: 699.9px) {
+      font-size: 44px;
+    }
+  }
+
+  h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
+    font-weight: 100;
+    text-align: center;
+
+    @media (max-width: 1055px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 699.9px) {
+      font-size: 22px;
+    }
   }
 }

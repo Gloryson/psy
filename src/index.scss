@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
   scrollbar-width: thin;
   color: #555555;
+  -webkit-tap-highlight-color: transparent;
 
   &::-webkit-scrollbar {
     width: 12px;
