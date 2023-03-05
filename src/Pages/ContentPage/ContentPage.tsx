@@ -1,11 +1,10 @@
 import { Card } from '../../components';
-import './ContentPage.scss';
 
 
 
 export const ContentPage = () => {
   return(
-    <section className='content__container'>
+    <>
       <Card />
       <Card />
       <Card />
@@ -13,6 +12,6 @@ export const ContentPage = () => {
       <Card />
       <Card />
       <Card />
-    </section>
+    </>
   )
 }

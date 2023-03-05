@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './NavigationMenu.scss';
 
@@ -9,10 +10,14 @@ export const NavigationMenu = () => {
 
   const setClasses = (element: string): string => {
     if (element === location.pathname.slice(1)) {
-      return element + '  current'
+      return element ? element + '  current' : 'content  current';
     }
-    return element;
+    return element ? element : 'content';
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  })
   
   return(
     <nav className='navigation__menu'>
@@ -21,8 +26,8 @@ export const NavigationMenu = () => {
         <div className={setClasses('about')}></div>
       </Link>
 
-      <Link to={'content'}>
-        <div className={setClasses('content')}></div>
+      <Link to={'/'}>
+        <div className={setClasses('')}></div>
       </Link>
 
       <Link to={'documents'}>

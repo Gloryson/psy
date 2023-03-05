@@ -1,63 +1,77 @@
 .card__container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  box-shadow: #cccccc 0 0 5px 1px;
-  border-radius: 5px;
-  width: calc((100vw - 140px - 60px) / 4);
-  height: calc((100vw - 140px - 60px) / 4);
-
-  @media (max-width: 1199.9px) {
-    width: calc((100vw - 140px - 45px) / 3);
-    height: calc((100vw - 140px - 45px) / 3);
-  }
+  height: 45vw;
+  padding: 60px 100px;
 
   @media (max-width: 999.9px) {
-    width: calc((100vw - 80px - 45px) / 3);
-    height: calc((100vw - 80px - 45px) / 3);
-  }
-
-  @media (max-width: 899.9px) {
-    width: calc((100vw - 80px - 30px) / 2);
-    height: calc((100vw - 80px - 30px) / 2);
-  }
-
-  @media (max-width: 699.9px) {
-    width: calc(100vw - 20px);
-    height: 85vw;
+    height: 69vw;
+    padding: 15px;
   }
 }
 
 .card__img {
-  width: 100%;
-  height: calc(100% / 1.7777777);
-  background: url(../../assets/img/svg/graduation-cap.svg) no-repeat center;
-  background-color: #5EA8A7;
-  background-size: 100%;
+  width: calc(40vw - 100px);
+  height: calc(40vw - 100px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @media (max-width: 999.9px) {
+    width: calc(40vw - 15px);
+    height: calc(40vw - 15px);
+  }
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(60vw - 100px);
+  height: 100%;
+  gap: 15px;
+  padding-left: 10vw;
+
+  @media (max-width: 999.9px) {
+    width: calc(60vw - 15px);
+  }
+}
+
+.card__title {
+  font-size: 42px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 
   @media (max-width: 699.9px) {
-    height: calc((100vw - 20px) / 1.7777777);
-    box-shadow: none;
+    font-size: 24px;
   }
 }
 
 .card__text {
-  height: 25%;
-  padding: 10px;
   overflow-y: hidden;
+  line-height: 22px;
+  max-height: 220px;
+
+  @media (max-width: 1199.9px) {
+    max-height: 154px;
+  }
+
+  @media (max-width: 999.9px) {
+    max-height: 110px;
+  }
 
   @media (max-width: 699.9px) {
-    height: 20%;
+    max-height: 66px;
   }
 }
 
 .card__button {
+  max-width: 150px;
   color: #5EA8A7;
   background-color: #ffffff;
   padding: 5px 9px;
   border: 2px solid #5EA8A7;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   box-shadow: #e2e2e2 0 0 7px 1px;

@@ -6,6 +6,7 @@
   width: calc((100vw - 200px) / 2.5);
   height: 60px;
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 50%;
   transform: translateX(-50%);

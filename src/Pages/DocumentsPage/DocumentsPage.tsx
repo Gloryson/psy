@@ -1,3 +1,4 @@
+import { Footer } from '../../components';
 import './DocumentsPage.scss';
 
 
