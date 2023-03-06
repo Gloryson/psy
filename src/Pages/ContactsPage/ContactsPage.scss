@@ -12,7 +12,7 @@
   width: 95vw;
   max-width: 500px;
   height: calc(100vh - 60px);
-  gap: 8px;
+  gap: 6px;
 
   @media (max-width: 999.9px) {
     height: calc(100vh - 120px);
@@ -21,7 +21,6 @@
   input, textarea {
     width: 300px;
     height: 40px;
-    border-radius: 15px;
     outline: 2px solid #5EA8A7;
     border-radius: 5px;
     padding: 5px;
