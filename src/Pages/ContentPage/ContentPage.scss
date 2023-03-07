@@ -65,24 +65,21 @@
 }
 
 .card__button {
+  height: auto;
   max-width: 150px;
   color: #5EA8A7;
   background-color: #ffffff;
   padding: 5px 9px;
   border: 2px solid #5EA8A7;
-  border-radius: 5px;
-  font-size: 16px;
   font-weight: 500;
-  cursor: pointer;
-  box-shadow: #e2e2e2 0 0 7px 1px;
 
   &:hover {
+    background-color: #ffffff;
     color: #4f8e8c;
     border: 2px solid #4f8e8c;
   }
 
   &:active {
-    box-shadow: none;
     background-color: #ffffff;
   }
 }

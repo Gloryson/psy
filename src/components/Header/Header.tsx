@@ -1,27 +1,20 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { LoginForm } from '../LoginForm/LoginForm';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.scss';
 
 
 
 export const Header = () => {
 
-  const [showLoginForm, setShowLoginForm] = useState(false);
+  const location = useLocation();
 
   return(
-    <>
-      <header className='header'>
-        <Link to={'about'}>
-          <div className='header__logo'></div>
-        </Link>
-        <button className='login__button' onClick={() => setShowLoginForm(() => true)}>Войти</button> 
-      </header>
-
-      <LoginForm 
-        showLoginForm={showLoginForm}
-        setShowLoginForm={setShowLoginForm}
-      />
-    </>
+    <header className='header'>
+      <Link to={'about'}>
+        <div className='header__logo'></div>
+      </Link>
+      <Link to={'login'}>
+        <button className={location.pathname === '/admin' ? 'off' : 'login__button'}>Войти</button>
+      </Link>
+    </header>
   )
 }

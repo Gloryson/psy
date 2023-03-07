@@ -1,0 +1,22 @@
+.admin__page__container > input, .admin__page__container > textarea {
+  width: 90vw;
+  max-width: 500px;
+}
+
+.admin__send__button {
+  width: 40vw;
+  max-width: 200px;
+}
+
+.admin__signout__button {
+  width: 75px;
+  height: 30px;
+  font-size: 15px;
+  position: absolute;
+  top: 15px;
+  right: 100px;
+
+  @media (max-width: 999.9px) {
+    right: 15px;
+  }
+}

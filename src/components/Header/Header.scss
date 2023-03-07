@@ -25,18 +25,8 @@
   width: 75px;
   height: 30px;
   font-size: 15px;
-  color: #ffffff;
-  background-color: #FF4447;
-  box-shadow: #e2e2e2 0 0 7px 1px;
-  border-radius: 5px;
-  cursor: pointer;
+}
 
-  &:hover {
-    background-color: #f24244;
-  }
-
-  &:active {
-    box-shadow: none;
-    background-color: #FF4447;
-  }
+.off {
+  display: none;
 }
