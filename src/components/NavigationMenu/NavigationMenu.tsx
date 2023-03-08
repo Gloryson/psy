@@ -9,7 +9,7 @@ export const NavigationMenu = () => {
   const location = useLocation();
 
   const setNavLinkClasses = (element: string): string => {
-    if (element === location.pathname.slice(4)) {
+    if (element === location.pathname.slice(5)) {
       return element ? element + '  current' : 'content  current';
     }
     return element ? element : 'content';
