@@ -40,7 +40,6 @@ export const LoginPage = () => {
         className='login__page__email__input' 
         type="email" 
         placeholder='Почта'
-        value={values.email}
         onChange={(e) => setValues(state => ({...state, email: e.target.value}))}
       />
 
@@ -48,7 +47,6 @@ export const LoginPage = () => {
         className='login__page__password__input' 
         type="password" 
         placeholder='Пароль'
-        value={values.password}
         onChange={(e) => setValues(state => ({...state, password: e.target.value}))}
       />
 

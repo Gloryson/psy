@@ -1,7 +1,7 @@
 .card__container {
   display: flex;
   align-items: center;
-  height: 45vw;
+  height: 50vw;
   padding: 60px 100px;
 
   @media (max-width: 999.9px) {
@@ -12,14 +12,13 @@
 
 .card__img {
   width: calc(40vw - 100px);
-  height: calc(40vw - 100px);
+  height: 90%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 
   @media (max-width: 999.9px) {
     width: calc(40vw - 15px);
-    height: calc(40vw - 15px);
   }
 }
 
@@ -30,43 +29,51 @@
   width: calc(60vw - 100px);
   height: 100%;
   gap: 15px;
-  padding-left: 10vw;
+  padding-left: 5vw;
 
   @media (max-width: 999.9px) {
     width: calc(60vw - 15px);
+    gap: 10px;
   }
 }
 
 .card__title {
-  font-size: 42px;
+  font-size: 40px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 
+  @media (max-width: 1299.9px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 1149.9px) {
+    font-size: 30px;
+  }
+
   @media (max-width: 699.9px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
 .card__text {
   overflow-y: hidden;
   line-height: 22px;
-  max-height: 220px;
+  max-height: 264px;
 
   @media (max-width: 1199.9px) {
-    max-height: 154px;
+    max-height: 198px;
   }
 
   @media (max-width: 999.9px) {
-    max-height: 110px;
+    max-height: 154px;
   }
 
   @media (max-width: 699.9px) {
-    max-height: 66px;
+    max-height: 88px;
   }
 }
 
 .card__button {
   height: auto;
-  max-width: 150px;
   color: #5EA8A7;
   background-color: #ffffff;
   padding: 5px 9px;
@@ -82,4 +89,57 @@
   &:active {
     background-color: #ffffff;
   }
+}
+
+.card__modal__window {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px 100px;
+  z-index: 100;
+
+  @media (max-width: 699.9px) {
+    padding: 60px 15px;
+  }
+}
+
+.card__modal__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 30px 18px 30px 30px;
+
+  @media (max-width: 699.9px) {
+    padding: 30px 3px 30px 15px;
+  }
+}
+
+.card__modal__text {
+  height: 100%;
+  white-space: pre-wrap;
+}
+
+.card__modal__close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  color: #ff4447;
+  font-size: 50px;
+  cursor: pointer;
+
+  @media (max-width: 699.9px) {
+    top: 0;
+    right: 15px;
+  }
+}
+
+.off {
+  display: none;
 }

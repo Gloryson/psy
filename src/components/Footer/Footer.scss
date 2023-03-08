@@ -38,7 +38,7 @@
   background-position: center;
   filter: invert(99%) sepia(5%) saturate(0%) hue-rotate(133deg) brightness(100%) contrast(106%);
   cursor: pointer;
-  transition-duration: 100ms;
+  transition-duration: 0.1s;
 
   &:hover {
     background-size: 90%;

@@ -46,7 +46,6 @@ export const AdminPage = () => {
         className='admin__url__input' 
         type="text" 
         placeholder='Адрес изображения'
-        value={values.url}
         onChange={(e) => setValues(state => ({...state, url: e.target.value}))}
       />
 
@@ -54,14 +53,12 @@ export const AdminPage = () => {
         className='admin__title__input' 
         type="text" 
         placeholder='Заголовок'
-        value={values.title}
         onChange={(e) => setValues(state => ({...state, title: e.target.value}))}
       />
 
       <textarea 
         className='admin__textarea' 
         placeholder='Текст'
-        value={values.text}
         onChange={(e) => setValues(state => ({...state, text: e.target.value}))}
       />
 
