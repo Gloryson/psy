@@ -58,6 +58,7 @@
   overflow-y: hidden;
   line-height: 22px;
   max-height: 264px;
+  white-space: pre-wrap;
 
   @media (max-width: 1199.9px) {
     max-height: 198px;
