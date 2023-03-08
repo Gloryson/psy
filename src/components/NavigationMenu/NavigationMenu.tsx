@@ -9,7 +9,7 @@ export const NavigationMenu = () => {
   const location = useLocation();
 
   const setNavLinkClasses = (element: string): string => {
-    if (element === location.pathname.slice(1)) {
+    if (element === location.pathname.slice(4)) {
       return element ? element + '  current' : 'content  current';
     }
     return element ? element : 'content';
@@ -22,19 +22,19 @@ export const NavigationMenu = () => {
   return(
     <nav className='navigation__menu'>
 
-      <Link to={'about'}>
+      <Link to={'psy/about'}>
         <div className={setNavLinkClasses('about')}></div>
       </Link>
 
-      <Link to={'/'}>
+      <Link to={'psy/'}>
         <div className={setNavLinkClasses('')}></div>
       </Link>
 
-      <Link to={'documents'}>
+      <Link to={'psy/documents'}>
         <div className={setNavLinkClasses('documents')}></div>
       </Link>
 
-      <Link to={'contacts'}>
+      <Link to={'psy/contacts'}>
         <div className={setNavLinkClasses('contacts')}></div>
       </Link>
       
