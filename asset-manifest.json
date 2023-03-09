@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/psy/static/css/main.ffb26701.css",
-    "main.js": "/psy/static/js/main.91704ac1.js",
+    "main.css": "/psy/static/css/main.996beba7.css",
+    "main.js": "/psy/static/js/main.9654a4be.js",
     "static/media/anatol.png": "/psy/static/media/anatol.d88225f2102a6e3f29dd.png",
     "static/media/logo.svg": "/psy/static/media/logo.2b4c6a021d7f59e5705e.svg",
     "static/media/instagram.svg": "/psy/static/media/instagram.fe88c6b3ab33ebe001de.svg",
@@ -12,11 +12,11 @@
     "static/media/document.svg": "/psy/static/media/document.df80f6f7b5fd52da7590.svg",
     "static/media/clip.svg": "/psy/static/media/clip.2f01769e663cd94304df.svg",
     "index.html": "/psy/index.html",
-    "main.ffb26701.css.map": "/psy/static/css/main.ffb26701.css.map",
-    "main.91704ac1.js.map": "/psy/static/js/main.91704ac1.js.map"
+    "main.996beba7.css.map": "/psy/static/css/main.996beba7.css.map",
+    "main.9654a4be.js.map": "/psy/static/js/main.9654a4be.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffb26701.css",
-    "static/js/main.91704ac1.js"
+    "static/css/main.996beba7.css",
+    "static/js/main.9654a4be.js"
   ]
 }
