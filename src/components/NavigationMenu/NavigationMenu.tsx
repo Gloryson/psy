@@ -1,19 +1,10 @@
 import { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './NavigationMenu.scss';
 
 
 
 export const NavigationMenu = () => {
-
-  const location = useLocation();
-
-  const setNavLinkClasses = (element: string): string => {
-    if (element === location.pathname.slice(5)) {
-      return element ? element + '  current' : 'content  current';
-    }
-    return element ? element : 'content';
-  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,23 +12,15 @@ export const NavigationMenu = () => {
   
   return(
     <nav className='navigation__menu'>
-
-      <Link to={'psy/about'}>
-        <div className={setNavLinkClasses('about')}></div>
-      </Link>
-
-      <Link to={'psy/'}>
-        <div className={setNavLinkClasses('')}></div>
-      </Link>
-
-      <Link to={'psy/documents'}>
-        <div className={setNavLinkClasses('documents')}></div>
-      </Link>
-
-      <Link to={'psy/contacts'}>
-        <div className={setNavLinkClasses('contacts')}></div>
-      </Link>
       
+      <NavLink to={'/about'} className={({isActive}) => isActive ? 'about  current' : 'about'}></NavLink>
+
+      <NavLink to={'/'} className={({isActive}) => isActive ? 'content  current' : 'content'}></NavLink>
+
+      <NavLink to={'/documents'} className={({isActive}) => isActive ? 'documents  current' : 'documents'}></NavLink>
+
+      <NavLink to={'/contacts'} className={({isActive}) => isActive ? 'contacts  current' : 'contacts'}></NavLink>
+
     </nav>
   )
 }

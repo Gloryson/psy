@@ -9,11 +9,11 @@ export const Header = () => {
 
   return(
     <header className='header'>
-      <Link to={'psy/about'}>
+      <Link to={'/about'}>
         <div className='header__logo'></div>
       </Link>
-      <Link to={'psy/login'}>
-        <button className={location.pathname === '/psy/admin' ? 'off' : 'login__button'}>Войти</button>
+      <Link to={'/login'}>
+        <button className={location.pathname === '/admin' ? 'off' : 'login__button'}>Войти</button>
       </Link>
     </header>
   )

@@ -15,7 +15,7 @@ export const LoginPage = () => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigate('/psy/admin')
+        navigate('/admin')
       }
     });
   }, [])
@@ -26,7 +26,7 @@ export const LoginPage = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((userCredential) => {
-        navigate('/psy/admin')
+        navigate('/admin')
       })
       .catch(() => {});
   }

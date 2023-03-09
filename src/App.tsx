@@ -32,12 +32,12 @@ export const App = () => {
       <Header />
       <NavigationMenu />
       <Routes>
-        <Route path='psy/about' element={<AboutPage />} />
-        <Route path='psy/' element={<ContentPage content={content} />}/>
-        <Route path='psy/documents' element={<DocumentsPage />}/>
-        <Route path='psy/contacts' element={<ContactsPage />}/>
-        <Route path='psy/login' element={<LoginPage />}/>
-        <Route path='psy/admin' element={<AdminPage />}/>
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/' element={<ContentPage content={content} />}/>
+        <Route path='/documents' element={<DocumentsPage />}/>
+        <Route path='/contacts' element={<ContactsPage />}/>
+        <Route path='/login' element={<LoginPage />}/>
+        <Route path='/admin' element={<AdminPage />}/>
       </Routes>
       <Footer />
     </>

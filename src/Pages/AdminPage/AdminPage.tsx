@@ -17,7 +17,7 @@ export const AdminPage = () => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (!user) {
-        navigate('/psy/login')
+        navigate('/login')
       }
     });
   }, [])
@@ -35,7 +35,7 @@ export const AdminPage = () => {
   const handleSignOutButton = () => {
     const auth = getAuth();
     signOut(auth).then(() => {
-      navigate('/psy/login');
+      navigate('/login');
     }).catch(() => {});
   }
 
