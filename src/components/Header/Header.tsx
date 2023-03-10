@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.scss';
 
@@ -6,6 +7,10 @@ import './Header.scss';
 export const Header = () => {
 
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location])
 
   return(
     <header className='header'>

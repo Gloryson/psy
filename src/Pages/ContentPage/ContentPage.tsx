@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ContentData } from '../../App';
+import { useStopScroll } from '../../helpers';
 import './ContentPage.scss';
 
 
@@ -14,9 +15,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({ content }) => {
 
   const [modal, setModal] = useState('');
 
-  const setModalWindowStyle = (cardId: string, modalId: string): string => {
-    return modalId === cardId ? 'card__modal__window' : 'card__modal__window  off';
-  }
+  useStopScroll(modal);
 
   return(
     <>
@@ -28,7 +27,7 @@ export const ContentPage: React.FC<ContentPageProps> = ({ content }) => {
             <div className='card__text'>{card.text}</div>
             <button className='card__button' onClick={() => setModal(() => card.id)}>Посмотреть</button>
           </div>
-          <div className={setModalWindowStyle(card.id, modal)}>
+          <div className={`card__modal__window  ${modal === card.id ? '' : 'off'}`}>
             <div className='card__modal__container'>
               <div className='card__modal__text'>{card.text}</div>
             </div>

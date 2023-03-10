@@ -11,6 +11,11 @@
   left: 50%;
   transform: translateX(-50%);
 
+  a.active {
+    background-size: 90%;
+    filter: invert(29%) sepia(100%) saturate(1690%) hue-rotate(336deg) brightness(102%) contrast(100%);
+  }
+
   @media (max-width: 999.9px) {
     width: 100%;
     height: 60px;
@@ -49,9 +54,4 @@
 
 .contacts {
   background-image: url(../../assets/img/svg/clip.svg);
-}
-
-.current {
-  background-size: 90%;
-  filter: invert(29%) sepia(100%) saturate(1690%) hue-rotate(336deg) brightness(102%) contrast(100%);
 }

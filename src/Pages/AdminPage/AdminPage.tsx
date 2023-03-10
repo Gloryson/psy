@@ -30,6 +30,7 @@ export const AdminPage = () => {
     const note = { url: values.url, title: values.title, text : values.text };
     set(ref(db, id), note);
     setValues({ url: '', title: '', text: '' });
+    alert('Успешно записано');
   }
 
   const handleSignOutButton = () => {

@@ -1,9 +1,8 @@
 import { child, getDatabase, ref, get } from "firebase/database";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom"
-import { NavigationMenu, Header, Footer } from "./components"
 import { normalizeArray } from "./helpers";
-import { AboutPage, AdminPage, ContactsPage, ContentPage, DocumentsPage, LoginPage } from "./Pages"
+import { AboutPage, AdminPage, AppLayout, ContactsPage, ContentPage, DocumentsPage, LoginPage } from "./Pages"
 
 
 export interface ContentData {
@@ -20,26 +19,25 @@ export const App = () => {
 
   useEffect(() => {
     const dbRef = ref(getDatabase());
-      get(child(dbRef, '/')).then((snapshot) => {
-        if (snapshot.exists()) {
-          setContent(() => normalizeArray(snapshot.val()));
-        }
-      }).catch(() => {});
+    get(child(dbRef, '/')).then((snapshot) => {
+      if (snapshot.exists()) {
+        setContent(() => normalizeArray(snapshot.val()));
+      }
+    }).catch(() => {});
   }, []);
 
+  
+
   return(
-    <>
-      <Header />
-      <NavigationMenu />
-      <Routes>
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/' element={<ContentPage content={content} />}/>
-        <Route path='/documents' element={<DocumentsPage />}/>
-        <Route path='/contacts' element={<ContactsPage />}/>
-        <Route path='/login' element={<LoginPage />}/>
-        <Route path='/admin' element={<AdminPage />}/>
-      </Routes>
-      <Footer />
-    </>
+    <Routes>
+      <Route path='/' element={<AppLayout /> }>
+        <Route path='about' element={<AboutPage />} />
+        <Route index element={<ContentPage content={content} />}/>
+        <Route path='documents' element={<DocumentsPage />}/>
+        <Route path='contacts' element={<ContactsPage />}/>
+        <Route path='login' element={<LoginPage />}/>
+        <Route path='admin' element={<AdminPage />}/>
+      </Route>
+    </Routes>
   )
 }
